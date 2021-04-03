@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2019-2020 The LineageOS Project
-# Copyright (C) 2018-2020 The SuperiorOS Project
+# Copyright (C) 2018-2020 The KangOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -8,20 +8,27 @@
 # Inherit from violet device
 $(call inherit-product, device/xiaomi/violet/device.mk)
 
-# Inherit some common SuperiorOS stuff.
-$(call inherit-product, vendor/superior/config/common.mk)
+# Inherit some common KangOS stuff.
+$(call inherit-product, vendor/kangos/config/common.mk)
 
 # Bootanimation Resolution
 TARGET_BOOT_ANIMATION_RES := 1080
 
 # Gapps
-TARGET_GAPPS_ARCH := arm64
+USE_GAPPS := false
+TARGET_INCLUDE_AOSP_REPLACEMENT := true
 
+# Kangos Properties
+KANGOS_BUILDTYPE := UNOFFICIAL
+PRODUCT_PRODUCT_PROPERTIES += \
+  ro.kangos.maintainer=kqixs \
+  ro.kangos.cpu=SM6150
+  
 # Face unlock
-TARGET_USES_FACE_UNLOCK := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := superior_violet
+PRODUCT_NAME := kangos_violet
 PRODUCT_DEVICE := violet
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 7 Pro
