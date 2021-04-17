@@ -19,7 +19,7 @@ USE_GAPPS := false
 TARGET_INCLUDE_AOSP_REPLACEMENT := true
 
 # Kangos Properties
-KANGOS_BUILDTYPE := UNOFFICIAL
+KANGOS_BUILDTYPE := OFFICIAL
 PRODUCT_PRODUCT_PROPERTIES += \
   ro.kangos.maintainer=kqixs \
   ro.kangos.cpu=SM6150
