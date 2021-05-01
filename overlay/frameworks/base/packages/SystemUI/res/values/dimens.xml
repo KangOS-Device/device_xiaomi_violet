@@ -29,6 +29,9 @@
     <dimen name="config_rounded_mask_size_top">136px</dimen>
     <dimen name="config_rounded_mask_size_bottom">136px</dimen>
 
+    <!-- Side padding on the lockscreen on the side of notifications --> 
+    <dimen name="notification_side_paddings">12dp</dimen> 
+    
     <!-- Margin on the right side of the system icon group on Keyguard. -->
     <dimen name="system_icons_keyguard_padding_end">6dp</dimen>
 
