@@ -12,8 +12,5 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
-    <color name="disabled_text_color">#66000000</color>
-
-    <color name="homepage_mi_background">#FF6700</color>
+    <color name="homepage_devicesettings_background">#FF6700</color>
 </resources>
