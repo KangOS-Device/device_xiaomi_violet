@@ -1,0 +1,14 @@
+[
+  {
+    "remote": "github",
+    "repository": "KangOS-Device/vendor_xiaomi_violet",
+    "target_path": "vendor/xiaomi/violet",
+    "branch": "eleven"
+  },
+  {
+    "remote": "github",
+    "repository" : "KangOS-Device/kernel_xiaomi_violet", 
+    "target_path": "kernel/xiaomi/violet",
+    "branch": "eleven"
+  }
+]
