@@ -39,6 +39,17 @@
                 android:targetPackage="com.kangos.device.DeviceSettings.kcal" />
         </Preference>
 
+        <Preference
+            android:icon="@drawable/ic_thermal_settings"
+            android:key="thermal_profiles"
+            android:summary="@string/thermal_summary"
+            android:title="@string/thermal_title">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.kangos.device.DeviceSettings.thermal.ThermalActivity"
+                android:targetPackage="com.kangos.device.DeviceSettings.thermal" />
+        </Preference>
+        
     </PreferenceCategory>
 
     <PreferenceCategory

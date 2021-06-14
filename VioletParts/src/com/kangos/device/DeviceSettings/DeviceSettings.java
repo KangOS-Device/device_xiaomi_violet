@@ -32,6 +32,7 @@ import android.util.Log;
 
 import com.kangos.device.DeviceSettings.kcal.KCalSettingsActivity;
 import com.kangos.device.DeviceSettings.speaker.ClearSpeakerActivity;
+import com.kangos.device.DeviceSettings.thermal.ThermalActivity;
 import com.kangos.device.DeviceSettings.preferences.VibratorStrengthPreference;
 import com.kangos.device.DeviceSettings.preferences.CustomSeekBarPreference;
 import com.kangos.device.DeviceSettings.preferences.SecureSettingListPreference;
@@ -59,6 +60,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String PREF_SELINUX_PERSISTENCE = "selinux_persistence";
 
     private static final String PREF_CLEAR_SPEAKER = "clear_speaker_settings";
+    private static final String PREF_THERMAL = "thermal_profiles";
 
     public static final String KEY_VIBSTRENGTH = "vib_strength";
 
@@ -70,6 +72,7 @@ public class DeviceSettings extends PreferenceFragment implements
       "spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:torch_1/max_brightness"; 
 
     private Preference mKcal;
+    private Preference mThermal;
     private SecureSettingSwitchPreference mFastcharge;
     private SwitchPreference mSelinuxMode;
     private SwitchPreference mSelinuxPersistence;
@@ -101,6 +104,12 @@ public class DeviceSettings extends PreferenceFragment implements
             return true;
         });
 
+        mThermal = findPreference(PREF_THERMAL);
+        mThermal.setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent(getActivity().getApplicationContext(), ThermalActivity.class);
+            startActivity(intent);
+            return true;
+        });
 
         mClearSpeakerPref = (Preference) findPreference(PREF_CLEAR_SPEAKER);
         mClearSpeakerPref.setOnPreferenceClickListener(preference -> {

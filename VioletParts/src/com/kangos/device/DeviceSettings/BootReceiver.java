@@ -31,6 +31,7 @@ import com.kangos.device.DeviceSettings.DiracUtils;
 import com.kangos.device.DeviceSettings.R;
 
 import com.kangos.device.DeviceSettings.kcal.Utils;
+import com.kangos.device.DeviceSettings.thermal.ThermalUtils;
 import com.kangos.device.DeviceSettings.preferences.VibratorStrengthPreference;
 
 import java.io.IOException;
@@ -136,6 +137,8 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                         DeviceSettings.PREF_TORCH_BRIGHTNESS, 150));
 	// Dirac
         context.startService(new Intent(context, DiracService.class));
+    //Thermals
+        ThermalUtils.startService(context);
     }
 
     private void showToast(String toastString, Context context) {

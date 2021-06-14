@@ -19,6 +19,7 @@
 
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -79,6 +80,18 @@
         </activity>
 
         <activity
+            android:name=".thermal.ThermalActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Main"
+            android:label="@@string/thermal_title">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
             android:name=".speaker.ClearSpeakerActivity" 
             android:exported="false" 
             android:label="@string/clear_speaker_title">
@@ -89,6 +102,11 @@
             </intent-filter>
         </activity>
 
+        <service
+            android:name=".thermal.ThermalService"
+            android:permission="ThermalService">
+        </service>
+        
         <service android:name=".StartAction" />
         <service
             android:name=".DiracService"
