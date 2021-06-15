@@ -17,13 +17,16 @@
     <string name="advanced_settings">Violet Parts</string>
     <string name="advanced_settings_summary">Device Specific Customisations</string>
 
-    <string name="display_title">Display</string>
+    <!-- Category Titles -->
+    <string name="display_category">Display</string>
+    <string name="selinux_category">SELinux</string>
+    <string name="sound_and_vibration_category">Sound and Vibration</string>
+    <string name="misc_category">Miscellaneous</string>
 
     <!-- KCal -->
     <string name="device_kcal_title">Display Color Calibration</string>
     <string name="kcal_enabled_summary">Calibrate Display Using KCAL</string>
 
-    <!-- kcal -->
     <string name="advanced_settings_kcal">Display Color Calibration</string>
     <string name="cat_colormanagement">Color Settings</string>
     <string name="cat_calibration">Display Calibration</string>
@@ -42,7 +45,8 @@
     <string name="grayscale">Grayscale Display</string>
 
     <string name="presets_dialog_title">Select Preset</string>
-    <!-- Presets -->
+    
+    <!-- KCal Presets -->
     <string name="preset_default">Default</string>
     <string name="preset_version_1">Version 1</string>
     <string name="preset_version_2">Version 2</string>
@@ -68,15 +72,14 @@
     <string name="preset_sim_cooler">SimCooler</string>
     <string name="preset_obsanity">Obsanity</string>
     <string name="preset_obsanity_ips">Obsanity IPS</string>
-
-    <!-- USB fastcharge -->
-    <string name="usb_fastcharge_title">USB Fastcharge</string>
-    <string name="fastcharge_title">Enable USB Fastcharge</string>
-    <string name="fastcharge_summary">Charge upto 900mA when connected to a computer via USB 3.0 port</string>
-
-    <!-- menu -->
+    
+    <!-- KCal menu -->
     <string name="kcal_presets" translatable="false">@string/presets_dialog_title</string>
     <string name="kcal_reset">Reset</string>
+
+    <!-- USB fastcharge -->
+    <string name="fastcharge_title">Enable USB Fastcharge</string>
+    <string name="fastcharge_summary">Charge upto 900mA when connected to a computer via USB 3.0 port</string>
 
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
@@ -90,7 +93,6 @@
     <string name="cannot_get_su">Action failed because of missing superuser access</string>
 
     <!-- Selinux Switch -->
-    <string name="selinux_category">SELinux</string>
     <string name="selinux_explanation_summary">SELinux is a set of kernel modifications and user-space tools. Changing modes can cause unwanted effects. Use at your own risk.</string>
     <string name="selinux_mode_title">SELinux mode</string>
     <string name="selinux_permissive_summary">Permissive</string>
@@ -99,8 +101,6 @@
     <string name="selinux_persistence_summary">Restore the above set sepolicy mode on each boot</string>
     <string name="selinux_permissive_toast_title">Selinux set to permissive!</string>
     <string name="selinux_enforcing_toast_title">Selinux set to enforcing!</string>
-
-    <string name="audio_title">Audio</string>
 
     <!-- Dirac settings -->
     <string name="dirac_title">Mi Sound Enhancer</string>
@@ -151,8 +151,7 @@
     <string name="fps_info_summary">Show overlay with current frames per second</string>
 
     <!-- Vibration -->
-    <string name="vibration_title">Vibration Control</string>
-    <string name="vibration_strength_title">Strength</string>
+    <string name="vibration_strength_title">Vibration Strength</string>
 
     <!-- CustomSeekBarPreference -->
     <string name="edit_value">Choose new Value</string>
@@ -160,11 +159,7 @@
     <string name="edit_hint">Value between %1$d and %2$d</string>
 
     <!-- Torch Brightness -->
-    <string name="torch_title">Torch</string>
-    <string name="torch_brightness_title">Brightness</string>
-
-    <!-- Speaker -->
-    <string name="speaker_category">Speaker</string>
+    <string name="torch_brightness_title">Torch Brightness</string>
 
     <!-- Clear Speaker -->
     <string name="clear_speaker_title">Clear speaker</string>

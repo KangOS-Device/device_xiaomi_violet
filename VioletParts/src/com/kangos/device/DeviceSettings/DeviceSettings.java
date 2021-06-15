@@ -45,17 +45,13 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private static final String TAG = "VioletParts";
 
-    public static final String CATEGORY_DISPLAY = "display";
     public static final String PREF_DEVICE_KCAL = "device_kcal";
-
-    public static final String CATEGORY_FASTCHARGE = "usb_fastcharge";
     public static final String PREF_USB_FASTCHARGE = "fastcharge";
     public static final String USB_FASTCHARGE_PATH = "/sys/kernel/fast_charge/force_fast_charge";
     public static final String PREF_ENABLE_DIRAC = "dirac_enabled";
     public static final String PREF_HEADSET = "dirac_headset_pref";
     public static final String PREF_PRESET = "dirac_preset_pref";
     public static final String PREF_KEY_FPS_INFO = "fps_info";
-    private static final String SELINUX_CATEGORY = "selinux";
     private static final String PREF_SELINUX_MODE = "selinux_mode";
     private static final String PREF_SELINUX_PERSISTENCE = "selinux_persistence";
 
@@ -94,10 +90,7 @@ public class DeviceSettings extends PreferenceFragment implements
 
         String device = FileUtils.getStringProp("ro.build.product", "unknown");
 
-        PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
-
         mKcal = findPreference(PREF_DEVICE_KCAL);
-
         mKcal.setOnPreferenceClickListener(preference -> {
             Intent intent = new Intent(getActivity().getApplicationContext(), KCalSettingsActivity.class);
             startActivity(intent);
@@ -148,7 +141,8 @@ public class DeviceSettings extends PreferenceFragment implements
             mFastcharge.setChecked(Fastcharge.isCurrentlyEnabled(this.getContext()));
             mFastcharge.setOnPreferenceChangeListener(new Fastcharge(getContext()));
         } else {
-            getPreferenceScreen().removePreference(findPreference(CATEGORY_FASTCHARGE));
+            PreferenceCategory mMisc = (PreferenceCategory) findPreference("misc");
+            mMisc.removePreference(findPreference(PREF_USB_FASTCHARGE));
         }
 
         SwitchPreference fpsInfo = (SwitchPreference) findPreference(PREF_KEY_FPS_INFO);
@@ -156,7 +150,6 @@ public class DeviceSettings extends PreferenceFragment implements
         fpsInfo.setOnPreferenceChangeListener(this);
 
         // SELinux
-        Preference selinuxCategory = findPreference(SELINUX_CATEGORY);
         mSelinuxMode = (SwitchPreference) findPreference(PREF_SELINUX_MODE);
         mSelinuxMode.setChecked(SELinux.isSELinuxEnforced());
         mSelinuxMode.setOnPreferenceChangeListener(this);
